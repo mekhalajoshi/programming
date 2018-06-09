@@ -61,23 +61,12 @@ public class Stack {
 		for (int i : arr1) {
 			a.push(i);
 		}
+		System.out.println("Original");
 		a.printStack();
 		System.out.println("");
-		a.pop();
-		a.printStack();
-		System.out.println("");
-		a.push(6);
-		a.printStack();
-		System.out.println("");
-		System.out.println("");
-		a.pop();
-		a.pop();
-		a.pop();
-		a.pop();
-		a.pop();
-		a.pop();
-		a.pop();
-		a.printStack();
+		
+		
+		
 
 	}
 
