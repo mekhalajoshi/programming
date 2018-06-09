@@ -1,7 +1,7 @@
-package linkedlists;
+package linkedLists;
 
 
-import linkedlists.LinkedList.ListNode;
+import linkedLists.LinkedList.ListNode;
 
 /***
  * Deep Copy

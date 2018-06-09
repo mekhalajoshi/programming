@@ -1,5 +1,5 @@
-package linkedlists;
-import linkedlists.LinkedList.ListNode;
+package linkedLists;
+import linkedLists.LinkedList.ListNode;
 //import linkedlists.ReverseList;
 /**
  * 

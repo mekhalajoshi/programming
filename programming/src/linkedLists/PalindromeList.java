@@ -1,6 +1,6 @@
-package linkedlists;
+package linkedLists;
 
-import linkedlists.LinkedList.ListNode;
+import linkedLists.LinkedList.ListNode;
 
 /**
  * Given a singly linked list, determine if its a palindrome. Return 1 or 0

@@ -1,4 +1,4 @@
-package linkedlists;
+package linkedLists;
 
 public class CloneListRandomPointer {
 

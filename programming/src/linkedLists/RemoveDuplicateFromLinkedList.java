@@ -1,7 +1,7 @@
 
-package linkedlists;
+package linkedLists;
 
-import linkedlists.LinkedList.ListNode;
+import linkedLists.LinkedList.ListNode;
 
 /**
  * Given a sorted linked list, delete all duplicates such that each element

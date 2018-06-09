@@ -1,6 +1,6 @@
-package linkedlists;
+package linkedLists;
 
-import linkedlists.LinkedList.ListNode;
+import linkedLists.LinkedList.ListNode;
 
 /**
  * Given a list, rotate the list to the right by k places, where k is
