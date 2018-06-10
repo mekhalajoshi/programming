@@ -21,7 +21,7 @@ package array;
  * 
  * Can you help Monk estimate the minimum cost required in order complete the
  * journey?
- * 
+ *  
  * Input:
  * 
  * First line of the input contains test cases denoted by T.
