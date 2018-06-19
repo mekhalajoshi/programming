@@ -1,6 +1,11 @@
 package stacksQueues;
 
 public class Stack {
+	Stack() {
+		minStack = new java.util.Stack<Integer>();
+	}
+
+	java.util.Stack<Integer> minStack;
 
 	Node top;
 
@@ -19,25 +24,41 @@ public class Stack {
 
 	/*-----------------------------------------*/
 
-	public Node pop() {
+	public Integer pop() {
+
+		Node temp = minPop();
+		if (min() == temp.data) {
+			minStack.pop();
+		}
+		return temp.data;
+	}
+
+	public Node minPop() {
 		if (top == null) {
 			return null;
 		}
 		Node temp = top;
 		top = top.next;
 		return temp;
-
 	}
 
 	public void push(int a) {
+		if (a <= min()) {
+			minStack.push(a);
+		}
+		minPush(a);
+
+	}
+
+	public void minPush(int a) {
 		Node temp = new Node(a);
+
 		if (top == null) {
 			top = temp;
 		} else {
 			temp.next = top;
 			top = temp;
 		}
-
 	}
 
 	public void printStack() {
@@ -49,6 +70,14 @@ public class Stack {
 				System.out.println("" + temp.data);
 				temp = temp.next;
 			}
+		}
+	}
+
+	public int min() {
+		if (minStack.isEmpty()) {
+			return Integer.MAX_VALUE;
+		} else {
+			return minStack.peek();
 		}
 	}
 
@@ -64,10 +93,12 @@ public class Stack {
 		System.out.println("Original");
 		a.printStack();
 		System.out.println("");
-		
-		
-		
 
+		
+		System.out.println("Min Stack");
+		a.printStack();
+		System.out.println("Min:"+a.min());
+		System.out.println("");
 	}
 
 }
