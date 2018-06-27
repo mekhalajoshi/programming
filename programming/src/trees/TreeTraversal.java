@@ -1,11 +1,14 @@
 package trees;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.Map.Entry;
 import java.util.Queue;
+import java.util.TreeMap;
 
 import trees.BinaryTree.Node;
 
-public class LevleOrderTraversal {
+public class TreeTraversal {
 
 	public void printLevelOrder1Line1Queue(Node node) {
 		Queue<Node> q = new LinkedList<Node>();
@@ -137,6 +140,36 @@ public class LevleOrderTraversal {
 		System.out.println("");
 	}
 
+	public void printVerticalOrder(Node root) {
+		TreeMap<Integer,ArrayList<Integer>> map = new TreeMap<Integer,ArrayList<Integer>>();
+		int dist = 0;
+		verticalOrder(root,dist,map);
+		for (Entry<Integer, ArrayList<Integer>> entry : map.entrySet())
+        {
+            System.out.println(entry.getValue());
+        }
+		
+	}
+	
+ 	private static void verticalOrder(Node node, int dist, TreeMap<Integer, ArrayList<Integer>> map) {
+		if(node==null) {
+			return;
+		}
+		if(map.get(dist)==null) {
+			ArrayList<Integer> list = new ArrayList<Integer>();
+			list.add(node.data);
+			map.put(dist, list);
+			
+		}else {
+			ArrayList<Integer> list = map.get(dist);
+			list.add(node.data);
+			map.put(dist, list);
+		}
+		verticalOrder(node.left,dist-1,map);
+		verticalOrder(node.right,dist+1,map);
+		
+	}
+
 	public static void main(String[] args) {
 		BinaryTree tree = new BinaryTree();
 		Node root = tree.root;
@@ -154,20 +187,25 @@ public class LevleOrderTraversal {
 		tree.insert(tree.root, 36);
 
 		System.out.println("Level Order Traversal One Line");
-		new LevleOrderTraversal().printLevelOrder1Line1Queue(tree.root);
+		new TreeTraversal().printLevelOrder1Line1Queue(tree.root);
 		System.out.println("");
 
 		System.out.println("Level Order Traversal Line By Line 2 Queues");
-		new LevleOrderTraversal().printLevelOrderLineByLine2Queue(tree.root);
+		new TreeTraversal().printLevelOrderLineByLine2Queue(tree.root);
 		System.out.println("");
 
 		System.out.println("Left View");
-		new LevleOrderTraversal().leftView(tree.root);
+		new TreeTraversal().leftView(tree.root);
 		System.out.println("");
 
 		System.out.println("Right View");
-		new LevleOrderTraversal().rightView(tree.root);
+		new TreeTraversal().rightView(tree.root);
 		System.out.println("");
+		
+		System.out.println("Vertical View");
+		new TreeTraversal().printVerticalOrder(tree.root);
+		System.out.println("");
+
 	}
 
 }
