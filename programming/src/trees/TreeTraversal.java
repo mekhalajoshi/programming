@@ -170,6 +170,47 @@ public class TreeTraversal {
 		
 	}
 
+ 	public void maximumSumOfAlevel(Node node) {
+ 		Queue<Node> q1 = new LinkedList<Node>();
+ 		Queue<Node> q2 = new LinkedList<Node>();
+ 		q1.add(node);
+ 		int levleMax = 0;
+ 		int max = node.data;
+ 		while(!q1.isEmpty() || !q2.isEmpty()) {
+ 			
+ 			while(!q1.isEmpty()) {
+ 				Node current = q1.poll();
+ 				levleMax +=current.data;
+ 				if(current.left!=null) {
+ 					q2.add(current.left);
+ 				}
+ 				if(current.right!=null) {
+ 					q2.add(current.right);
+ 				}
+ 				
+ 			}
+ 			max = Math.max(levleMax, max);
+ 			levleMax = 0;
+ 			
+ 			while(!q2.isEmpty()) {
+ 				Node current = q2.poll();
+ 				levleMax +=current.data;
+ 				if(current.left!=null) {
+ 					q1.add(current.left);
+ 				}
+ 				if(current.right!=null) {
+ 					q1.add(current.right);
+ 				}
+ 			}
+ 			max = Math.max(levleMax, max);
+ 			levleMax = 0;
+ 			
+ 		}
+ 		
+ 		System.out.println("Maximum level sum is "+max);
+ 		
+ 	}
+ 	
 	public static void main(String[] args) {
 		BinaryTree tree = new BinaryTree();
 		Node root = tree.root;
@@ -206,6 +247,9 @@ public class TreeTraversal {
 		new TreeTraversal().printVerticalOrder(tree.root);
 		System.out.println("");
 
+		new TreeTraversal().maximumSumOfAlevel(tree.root);
+		System.out.println("");
+		
 	}
 
 }
