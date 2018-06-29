@@ -1,4 +1,6 @@
 package linkedLists;
+import java.util.Stack;
+
 import linkedLists.LinkedList.ListNode;
 //import linkedlists.ReverseList;
 /**
@@ -68,6 +70,40 @@ public class KReverselLnkedlist {
 		return fake;
     }
 	
+	public static ListNode reverseList2(ListNode A, int B) {
+		Stack<ListNode> stack  = new Stack<ListNode>();
+		int count = 0;
+		ListNode current = A;
+		ListNode head = null;
+		ListNode prev = null;
+		while(current!=null) {
+			
+			count = 0;
+			while (current != null && count < B) {
+	            stack.push(current);
+	            current = current.next;
+	            count++;
+	        }
+			
+			while(!stack.isEmpty()) {
+				if (prev == null) {
+	                prev = stack.peek();
+	                head = prev;
+	                stack.pop();
+	            } else {
+	                prev.next = stack.peek();
+	                prev = prev.next;
+	                stack.pop();
+	            }
+			}
+			
+			
+		}
+		prev.next = null;
+		return head;
+	}
+	
+	
 	
 	public static ListNode reverse(ListNode A) {
 		ListNode prev = null;
@@ -92,6 +128,10 @@ public class KReverselLnkedlist {
 		a.printList();
 		a.head = reverseList(a.head,4);
 		System.out.print("reversed List ");
+		a.printList();
+		
+		a.head = reverseList2(a.head,4);
+		System.out.print("2 reversed List ");
 		a.printList();
 		
 		
