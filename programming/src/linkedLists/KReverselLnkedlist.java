@@ -1,7 +1,5 @@
 package linkedLists;
 import java.util.Stack;
-
-import linkedLists.LinkedList.ListNode;
 //import linkedlists.ReverseList;
 /**
  * 

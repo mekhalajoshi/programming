@@ -1,7 +1,5 @@
 package linkedLists;
 
-import linkedLists.LinkedList.ListNode;
-
 public class ReverseList {
 	public static ListNode reverseList(ListNode A) {
 		if(A==null) {

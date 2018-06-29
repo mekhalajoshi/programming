@@ -1,8 +1,5 @@
 package linkedLists;
 
-
-import linkedLists.LinkedList.ListNode;
-
 /***
  * Deep Copy
  *
@@ -24,7 +21,7 @@ public class CopyList {
 
 		while (current != null) {
 			// make deep copy of node
-			temp = result.new ListNode(current.val);
+			temp = new ListNode(current.val);
 			// mark the first node as the new head
 			if (first == true) {
 				newHead = temp;

@@ -8,8 +8,6 @@ package linkedLists;
  */
 import java.util.HashSet;
 
-import linkedLists.LinkedList.ListNode;
-
 public class RemoveDuplicatesUnsortedList {
 
 	public ListNode removeDuplicatesUnsorted(ListNode n) {
