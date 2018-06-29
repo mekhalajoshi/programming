@@ -1,25 +1,27 @@
 package linkedLists;
 
+class ListNode {
+	public int val;
+	public ListNode next;
+
+	ListNode(int x) {
+		val = x;
+		next = null;
+	}
+
+	public ListNode() {
+		// TODO Auto-generated constructor stub
+	}
+}
 public class LinkedList {
 	ListNode head;
 
+	
 	LinkedList() {
 		head = null;
 	}
 
-	class ListNode {
-		public int val;
-		public ListNode next;
-
-		ListNode(int x) {
-			val = x;
-			next = null;
-		}
-
-		public ListNode() {
-			// TODO Auto-generated constructor stub
-		}
-	}
+	
 
 	/**------------------------------*/
 	
