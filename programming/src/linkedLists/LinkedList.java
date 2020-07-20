@@ -10,21 +10,18 @@ class ListNode {
 	}
 
 	public ListNode() {
-		// TODO Auto-generated constructor stub
 	}
 }
+
 public class LinkedList {
 	ListNode head;
 
-	
 	LinkedList() {
 		head = null;
 	}
 
-	
+	/** ------------------------------ */
 
-	/**------------------------------*/
-	
 	public void add(int val) {
 		if (head == null) {
 			head = new ListNode(val);
@@ -37,7 +34,7 @@ public class LinkedList {
 		}
 	}
 
-	public  int countNodes() {
+	public int countNodes() {
 		if (head == null) {
 			return 0;
 		} else {
@@ -68,7 +65,7 @@ public class LinkedList {
 				return null;
 		}
 	}
-	
+
 	/**
 	 * This code handles inserting at the very front as a special case. Otherwise,
 	 * it works by running a current pointer to the node before where the new node
@@ -145,32 +142,29 @@ public class LinkedList {
 
 	/**
 	 * Given a list, split it into two sublists — one for the front half, and one
-	 * for the back half. 
-	 * If the number of elements is odd, the extra element should
-	 * go in the front list. 
-	 * So FrontBackSplit() on the list 
+	 * for the back half. If the number of elements is odd, the extra element should
+	 * go in the front list. So FrontBackSplit() on the list
 	 * 
-	 * {2, 3, 5, 7, 11} 
-	 * should yield the two lists 
+	 * {2, 3, 5, 7, 11} should yield the two lists
 	 * 
-	 * {2, 3, 5} and {7, 11}. 
+	 * {2, 3, 5} and {7, 11}.
 	 * 
-	 * You should check your solution against a few
-	 * cases (length = 2, length = 3, length=4) to make sure that the list gets
-	 * split correctly near the short-list boundary conditions. If it works right
-	 * for length=4, it probably works right for length=1000. You will probably need
-	 * special case code to deal with the (length <2) cases. 
+	 * You should check your solution against a few cases (length = 2, length = 3,
+	 * length=4) to make sure that the list gets split correctly near the short-list
+	 * boundary conditions. If it works right for length=4, it probably works right
+	 * for length=1000. You will probably need special case code to deal with the
+	 * (length <2) cases.
 	 * 
-	 * Hint. Probably the
-	 * simplest strategy is to compute the length of the list, then use a for loop
-	 * to hop over the right number of nodes to find the last node of the front
-	 * half, and then cut the list at that point. There is a trick technique that
-	 * uses two pointers to traverse the list. A "slow" pointer advances one nodes
-	 * at a time, while the "fast" pointer goes two nodes at a time. When the fast
-	 * pointer reaches the end, the slow pointer will be about half way. For either
-	 * strategy, care is required to split the list at the right point.
+	 * Hint. Probably the simplest strategy is to compute the length of the list,
+	 * then use a for loop to hop over the right number of nodes to find the last
+	 * node of the front half, and then cut the list at that point. There is a trick
+	 * technique that uses two pointers to traverse the list. A "slow" pointer
+	 * advances one nodes at a time, while the "fast" pointer goes two nodes at a
+	 * time. When the fast pointer reaches the end, the slow pointer will be about
+	 * half way. For either strategy, care is required to split the list at the
+	 * right point.
 	 */
-	public  ListNode frontBackSplit() {
+	public ListNode frontBackSplit() {
 		if (head == null)
 			return null;
 		else {
@@ -181,7 +175,7 @@ public class LinkedList {
 			}
 			count = count / 2;
 			for (int i = 1; i < count; i++) {
-					temp = temp.next;
+				temp = temp.next;
 			}
 			ListNode newHead = temp.next;
 			temp.next = null;
@@ -206,15 +200,14 @@ public class LinkedList {
 		current.next = previous;
 		return current;
 	}
-	
-	
+
 	public void deleteList() {
 		if (head != null) {
 			head = null;
 		}
 	}
 
-	public  void printList() {
+	public void printList() {
 		if (head == null) {
 			System.out.println("null");
 		} else {
@@ -228,34 +221,30 @@ public class LinkedList {
 		}
 	}
 
-	/**-----------------------------*/
-	
-	 
+	/** ----------------------------- */
+
 	public static void main(String args[]) {
 
 		LinkedList a = new LinkedList();
-		int[] arr1 = { 1, 1,4,5 };
+		int[] arr1 = { 1, 1, 4, 5 };
 		for (int i : arr1) {
 			a.add(i);
 		}
 		System.out.println("Count Nodes");
 		System.out.print("Original List ");
 		a.printList();
-		System.out.println("Number of nodes = "+a.countNodes());
+		System.out.println("Number of nodes = " + a.countNodes());
 		System.out.println("");
 		System.out.println("");
-		
-		
+
 		System.out.println("Insert Nth");
 		a.insertNth(1, 99);
 		System.out.print("Original List ");
 		a.printList();
-		System.out.println("1st node = "+ a.getNthNode(1).val);
+		System.out.println("1st node = " + a.getNthNode(1).val);
 		System.out.println("");
 		System.out.println("");
-		
-		
-		
+
 		System.out.println("Sorted insert");
 		System.out.print("Original List ");
 		a.printList();
@@ -264,23 +253,20 @@ public class LinkedList {
 		a.printList();
 		System.out.println("");
 		System.out.println("");
-		
-		
+
 		System.out.println("Reverse List ");
 		System.out.print("Original List ");
 		a.printList();
-		a.head=a.reverseList();
+		a.head = a.reverseList();
 		System.out.print("Reversed List ");
 		a.printList();
 		System.out.println("");
 		System.out.println("");
-		
-	
-		
+
 		System.out.println("Append List");
 		LinkedList b = new LinkedList();
 		b.add(0);
-		
+
 		System.out.print("List A ");
 		a.printList();
 		System.out.print("List B ");
@@ -290,9 +276,7 @@ public class LinkedList {
 		a.printList();
 		System.out.println("");
 		System.out.println("");
-		
-		
-		
+
 		System.out.println("FrontBackSplit ");
 		System.out.print("original List ");
 		a.printList();
@@ -303,7 +287,6 @@ public class LinkedList {
 		b.printList();
 		System.out.println("");
 		System.out.println("");
-		
 
 	}
 

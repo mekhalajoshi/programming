@@ -16,31 +16,28 @@ import java.util.ArrayList;
  *
  */
 public class RemoveElememt {
-	
+
 	public int removeElement(ArrayList<Integer> a, int b) {
-		  int n = a.size();
-		  int i=0, j=0;
-			 for (i=0, j=0; j<n; j++)
-		    {
-		        if (a.get(j) != b)
-		        {
-		            a.set(i, a.get(j));
-		            i++;
-		        }
-		    }
-		    
-		    return i;
+		int n = a.size();
+		int i = 0, j = 0;
+		for (i = 0, j = 0; j < n; j++) {
+			if (a.get(j) != b) {
+				a.set(i, a.get(j));
+				i++;
+			}
 		}
 
+		return i;
+	}
+
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		ArrayList<Integer> a = new ArrayList<Integer>();
-		int[] arr = {4, 1, 1, 2, 1, 3}; 
+		int[] arr = { 4, 1, 1, 2, 1, 3 };
 		for (int i : arr) {
 			a.add(i);
 		}
-		for (int i=0;i<a.size();i++) {
-			System.out.print(a.get(i)+" ");
+		for (int i = 0; i < a.size(); i++) {
+			System.out.print(a.get(i) + " ");
 		}
 		System.out.println("");
 		System.out.println(new RemoveElememt().removeElement(a, 1));

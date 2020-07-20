@@ -1,4 +1,5 @@
 package hashing;
+
 /**
  * Given an array of integers, find two numbers such that they add up to a specific target number.
 
@@ -16,7 +17,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class TwoSum {
- 
+
 	public ArrayList<Integer> twoSum(final List<Integer> A, int B) {
 		HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
 		ArrayList<Integer> result = new ArrayList<Integer>();
@@ -34,7 +35,6 @@ public class TwoSum {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		int[] arr = { 2, 17, 11, 7, 15 };
 		ArrayList<Integer> A = new ArrayList<Integer>();
 		ArrayList<Integer> result = new ArrayList<Integer>();

@@ -84,7 +84,6 @@ public class Stack {
 	/*-----------------------------------------*/
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Stack a = new Stack();
 		int[] arr1 = { 1, 2, 3, 4, 5 };
 		for (int i : arr1) {
@@ -94,10 +93,9 @@ public class Stack {
 		a.printStack();
 		System.out.println("");
 
-		
 		System.out.println("Min Stack");
 		a.printStack();
-		System.out.println("Min:"+a.min());
+		System.out.println("Min:" + a.min());
 		System.out.println("");
 	}
 

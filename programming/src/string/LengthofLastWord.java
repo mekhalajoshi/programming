@@ -20,30 +20,29 @@ package string;
  *
  */
 public class LengthofLastWord {
-	
+
 	public static int lengthOfLastWord(final String A) {
-		if(A.length()==0)
+		if (A.length() == 0)
 			return 0;
-		int count=0;
-		int lastCount=0;
-		for(int i=0;i<A.length();i++) {
-			if(A.charAt(i)==' ') {
-			    if(count!=0)
-				    lastCount = count;
-				count =0;
-			}else {
+		int count = 0;
+		int lastCount = 0;
+		for (int i = 0; i < A.length(); i++) {
+			if (A.charAt(i) == ' ') {
+				if (count != 0)
+					lastCount = count;
+				count = 0;
+			} else {
 				count++;
 			}
 		}
-		return count==0 ? lastCount : count;
-    }
+		return count == 0 ? lastCount : count;
+	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		System.out.println("abc a"+" = "+lengthOfLastWord("abc a"));
-		System.out.println("  "+" = "+lengthOfLastWord("   "));
-		System.out.println(" a"+" = "+lengthOfLastWord(" a"));
-		System.out.println("abc a  "+" = "+lengthOfLastWord("abc a  "));
+		System.out.println("abc a" + " = " + lengthOfLastWord("abc a"));
+		System.out.println("  " + " = " + lengthOfLastWord("   "));
+		System.out.println(" a" + " = " + lengthOfLastWord(" a"));
+		System.out.println("abc a  " + " = " + lengthOfLastWord("abc a  "));
 	}
 
 }

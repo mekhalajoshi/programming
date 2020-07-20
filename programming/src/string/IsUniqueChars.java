@@ -26,7 +26,6 @@ public class IsUniqueChars {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		System.out.println("ABC " + new IsUniqueChars().isUniqueChars("ABC"));
 		System.out.println("aaa " + new IsUniqueChars().isUniqueChars("aaa"));
 		System.out.println("b..a " + new IsUniqueChars().isUniqueChars("b..a"));

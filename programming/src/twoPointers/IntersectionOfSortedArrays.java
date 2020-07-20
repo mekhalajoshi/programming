@@ -20,10 +20,9 @@ import java.util.List;
  * arrays should be included multiple times in the final output.
  * 
  *
- * .equals NOT == when
- * A.get(mi) is in int range it gets unboxed as int, so == works
- * but when it is larger than the int range it is treated as an obj. That is why ==
- * does not work(Use .equals)
+ * .equals NOT == when A.get(mi) is in int range it gets unboxed as int, so ==
+ * works but when it is larger than the int range it is treated as an obj. That
+ * is why == does not work(Use .equals)
  *
  *
  */
@@ -34,8 +33,8 @@ public class IntersectionOfSortedArrays {
 		int mi = 0;
 		int ni = 0;
 		while (mi < A.size() && ni < B.size()) {
-			 if(A.get(mi).equals(B.get(ni))) {
-//			if (A.get(mi) == (B.get(ni))) {
+			if (A.get(mi).equals(B.get(ni))) {
+				// if (A.get(mi) == (B.get(ni))) {
 				result.add(A.get(mi));
 				mi++;
 				ni++;
@@ -50,7 +49,6 @@ public class IntersectionOfSortedArrays {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		ArrayList<Integer> A = new ArrayList<Integer>();
 		int arr1[] = { 1 };
 		// {10000000};

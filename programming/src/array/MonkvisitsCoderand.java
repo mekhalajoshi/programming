@@ -5,7 +5,7 @@ package array;
  * plan a journey to Coderland. Now as Monk is just a competitive programmer, he
  * is always short of money. In order to make this journey happen, he wants to
  * minimize the total travel expenditure.
- *  
+ * 
  * Journey to Coderland will be through N checkpoints. Checkpoints are numbered
  * from 0 to . At the start of the journey Monk is present at the checkpoint 0.
  * Also checkpoint will lead to Coderland. Each checkpoint has a petrol pump
@@ -21,7 +21,7 @@ package array;
  * 
  * Can you help Monk estimate the minimum cost required in order complete the
  * journey?
- *  
+ * 
  * Input:
  * 
  * First line of the input contains test cases denoted by T.
@@ -42,26 +42,19 @@ package array;
  * For each of the test cases, output the required answer in a separate line.
  * 
  *
- * SAMPLE INPUT 
- * 1
- * 2 
- * 5 1 
- * 1 2 
+ * SAMPLE INPUT 1 2 5 1 1 2
  * 
  * 
- * SAMPLE OUTPUT 7 
- * Explanation We can buy petrol at
- * rate 5 per litre from checkpoint 0 and then at rate 1 per litre from
- * checkpoint 1. Thus, total cost incurred will be (5*1) + (1*2)  = 7. Had we bought all the
- * petrol at checkpoint 0, cost incurred would have been 5*(1+2) = 15 which is not the best
- * answer.
+ * SAMPLE OUTPUT 7 Explanation We can buy petrol at rate 5 per litre from
+ * checkpoint 0 and then at rate 1 per litre from checkpoint 1. Thus, total cost
+ * incurred will be (5*1) + (1*2) = 7. Had we bought all the petrol at
+ * checkpoint 0, cost incurred would have been 5*(1+2) = 15 which is not the
+ * best answer.
  * 
  */
- 
-public class MonkvisitsCoderand {
 
+public class MonkvisitsCoderand {
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		int n = 2;
 		int[] C = { 5, 1 };
 		int[] L = { 1, 2 };
@@ -69,19 +62,17 @@ public class MonkvisitsCoderand {
 	}
 
 	public static long solve(int[] C, int[] L, int n) {
-		long result =0; 
-				// C[0] * L[0];
+		long result = 0;
+		// C[0] * L[0];
 		long current = C[0];
 
 		for (int i = 0; i < n; i++) {
-			if (current > C[i])
-			{
+			if (current > C[i]) {
 				current = C[i];
 			}
-				result += (current * L[i]);
+			result += (current * L[i]);
 		}
 
 		return result;
 	}
-
 }

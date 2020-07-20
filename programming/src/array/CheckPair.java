@@ -51,7 +51,6 @@ public class CheckPair {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		ArrayList<Integer> a = new ArrayList<Integer>();
 		int arr[] = { 2, 11, 5, 1, 4, 7 };
 		for (int i : arr) {
